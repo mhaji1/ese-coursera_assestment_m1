@@ -9,16 +9,15 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stat.c
+ * @brief implementation of stat.c
  *
- * <Add Extended Description Here>
+ * 
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Mohamed Haji
+ * @date 4/1/2021
  *
  */
-
 
 
 #include <stdio.h>
@@ -35,9 +34,22 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+
 
 }
 
-/* Add other Implementation File Code Here */
+void print_statistic(unsigned char test[]){}
+
+void print_array(unsigned char test[],int l){}
+
+int find_mean(unsigned char test[],int l){}
+
+int find_median(unsigned char test[], int l){}
+
+int find_maximum(unsigned char test[],int l){}
+
+int find_minimum(unsigned char test[],int l){}
+
+void swap(unsigned char *a, unsigned char *b){}
+
+void sort_array(unsigned char test[],int l){}
