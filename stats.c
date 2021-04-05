@@ -35,21 +35,76 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
 
+print_statistic(test);
 
 }
 
-void print_statistic(unsigned char test[]){}
 
-void print_array(unsigned char test[],int l){}
+void print_statistic(unsigned char test[]){
+  
+  printf("Test Array: ");
+  print_array(test,SIZE);
+  printf("mean: %d \n",find_mean(test,SIZE));
+  printf("median: %d \n",find_median(test,SIZE));
+  printf("maximum: %d \n",find_maximum(test,SIZE));
+  printf("minimum: %d \n",find_minimum(test,SIZE));
+  sort_array(test,SIZE);
+  printf("Sorted test array from largest to smallest: ");
+  print_array(test,SIZE);
 
-int find_mean(unsigned char test[],int l){}
+}
 
-int find_median(unsigned char test[], int l){}
+void print_array(unsigned char test[],int l){
+  int i;
+  for(i = 0; i < l; i++){
+	printf("%d ",test[i]);
+}
+  printf("\n");
+}
 
-int find_maximum(unsigned char test[],int l){}
+int find_mean(unsigned char test[],int l){
+  int i;
+  int sum = 0;
+  for(i = 0; i < l; i++){
+	sum += test[i];
+}
+  return sum / l ;
+}
 
-int find_minimum(unsigned char test[],int l){}
+int find_median(unsigned char test[], int l){
+  int median;
+  sort_array(test,l);
+  median = test[(l/2)];
+  return median;
+}
 
-void swap(unsigned char *a, unsigned char *b){}
+int find_maximum(unsigned char test[],int l){
+  int max;
+  sort_array(test,l);
+  return max = test[0];
+}
 
-void sort_array(unsigned char test[],int l){}
+int find_minimum(unsigned char test[],int l){
+  int min;
+  sort_array(test,l);
+  return min = test[l-1];
+}
+
+void swap(unsigned char *a, unsigned char *b){
+  int temp;
+  temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
+void sort_array(unsigned char test[],int l){
+  int i,j,max;	
+  for(i = 0; i < l - 1; i++){
+	max = i;
+	for(j = i + 1; j < l; j++){
+		if(test[j] > test[max])
+ 			max = j;
+	}
+	swap(&test[max],&test[i]);
+  }
+}
